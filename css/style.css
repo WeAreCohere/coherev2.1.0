@@ -19392,3 +19392,57 @@ footer .footer-navbar .nav-item:last-child a {
   color: #fff;
   cursor:none;
 }
+
+
+/* IMPACT Section */
+.impact-section {
+  text-align: center;
+  padding: 50px 20px;
+  width: 100% !important;
+  height: 50vh;
+  background-color: #f9f9f9; /* Light background color for better contrast */
+  margin: 0 auto; /* Center the section */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+  border-radius: 8px; /* Rounded corners */
+}
+
+@media (max-width: 768px) {
+  .impact-section {
+    padding: 30px 10px; /* Adjust padding for smaller screens */
+  }
+}
+
+.impact-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.impact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.impact-title {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.impact-line {
+  width: 50px;
+  height: 2px;
+  background-color: black;
+  margin-bottom: 10px;
+}
+
+.impact-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: orange;
+}
