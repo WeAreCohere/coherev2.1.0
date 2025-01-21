@@ -19408,7 +19408,7 @@ footer .footer-navbar .nav-item:last-child a {
 
 @media (max-width: 768px) {
   .impact-section {
-    padding: 30px 10px; /* Adjust padding for smaller screens */
+    padding: 30px 10px; 
   }
 }
 

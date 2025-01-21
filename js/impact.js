@@ -1,11 +1,11 @@
 // Function to count up numbers
 function countUp(el, start, end, duration) {
     let current = start;
-    const increment = (end - start) / (duration /20 ); // Update every 20ms
+    const increment = (end - start) / (duration /20 );
     const timer = setInterval(() => {
       current += increment;
       if (current >= end) {
-        el.textContent = Math.floor(end); // Ensure it ends exactly at the target
+        el.textContent = Math.floor(end);
         clearInterval(timer);
       } else {
         el.textContent = Math.floor(current);
@@ -22,14 +22,14 @@ function countUp(el, start, end, duration) {
           const counters = entry.target.querySelectorAll('.vertical-counter');
           counters.forEach(counter => {
             const target = +counter.getAttribute('data-to');
-            const prefix = counter.getAttribute('data-prefix') || ''; // Add prefix if available
-            countUp(counter, 0, target, 2000); // Count to the target in 2 seconds
+            const prefix = counter.getAttribute('data-prefix') || 'SHEMA'; // Add prefix if available
+            countUp(counter, 0, target, 3000); // Count to the target number in 3 seconds
           });
-          observer.disconnect(); // Disconnect after the animation has run
+          observer.disconnect();
         }
       });
     },
-    { threshold: 0.5 } // Trigger when 50% of the section is visible
+    { threshold: 0.5} // Trigger when 50% of the section is visible
   );
   
   // Apply the observer to the section with the .impact-section class
