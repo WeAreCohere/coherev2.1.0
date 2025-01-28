@@ -2109,7 +2109,7 @@ input:focus, select:focus, textarea:focus, .form-control:focus {
 /* Highlight separator */
 .highlight-separator {
   position: relative;
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
 }
 .highlight-separator[data-shadow-animation] {
   box-shadow: none !important;
