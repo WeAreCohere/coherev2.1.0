@@ -41,6 +41,7 @@ Table of contents
 ====================================== */
 :root {
   --base-color: #2946f3;
+  --base-color-cohere-blue: #72ccca;
   --white: #ffffff;
   --black: #000000;
   --red: #dc3131;
@@ -3279,6 +3280,11 @@ input:focus, select:focus, textarea:focus, .form-control:focus {
 .bg-solitude-cohere-orange {
   background-color: #ff9343;
 }
+
+.bg-solitude-cohere-blue {
+  background-color: var(--base-color-cohere-blue);
+}
+
 .bg-aluminium-grey {
   background-color: var(--aluminium-grey);
 }
@@ -7196,7 +7202,7 @@ header.sticky .navbar.disable-fixed {
   color: var(--medium-gray);
   font-size: 15px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 1000;
   padding-bottom: 10px;
   display: block;
 }

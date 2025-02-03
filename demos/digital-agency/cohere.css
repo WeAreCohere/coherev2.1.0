@@ -220,3 +220,67 @@ footer a:hover, .footer-navbar li a:hover {
         line-height: 3.75rem;
     } 
 }
+
+.dark-nav .carousel-control-prev-icon, .dark-nav .carousel-control-next-icon {
+    filter: invert(1); /* Makes arrows dark */
+}
+.dark-indicator {
+    background-color: #333 !important; /* Darkens indicator dots */
+}
+
+.navbar-nav {
+    flex-wrap: nowrap !important;  /* Prevents wrapping */
+    white-space: nowrap;           /* Prevents text from breaking */
+}
+
+.navbar-nav .nav-item {
+    margin-right: 15px;            /* Adds spacing between items */
+    position: relative;            /* Ensures dropdown positioning */
+}
+
+.navbar-nav .dropdown-menu {
+    min-width: 200px;              /* Ensures dropdown is visible */
+    position: absolute;            /* Makes sure it appears correctly */
+    top: 100%;                     /* Places it below the nav item */
+    left: 0;
+    z-index: 1000;                 /* Keeps it above other elements */
+    display: none;                 /* Hides dropdown by default */
+}
+
+.navbar-nav .nav-item:hover .dropdown-menu {
+    display: block;                 /* Shows dropdown on hover */
+}
+
+
+/* team */
+
+
+
+.team4 .font-weight-medium {
+	font-weight: 500;
+}
+
+.team4 h5 {
+    line-height: 22px;
+    font-size: 18px;
+}
+
+.team4 .subtitle {
+    color: #8d97ad;
+    line-height: 24px;
+		font-size: 13px;
+}
+
+.team4 ul li a {
+  color: #8d97ad;
+  padding-right: 15px;
+  -webkit-transition: 0.1s ease-in;
+  -o-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+.team4 ul li a:hover {
+  -webkit-transform: translate3d(0px, -5px, 0px);
+  transform: translate3d(0px, -5px, 0px);
+	color: #316ce8;
+}
