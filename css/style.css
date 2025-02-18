@@ -19399,7 +19399,7 @@ footer .footer-navbar .nav-item:last-child a {
   text-align: center;
   padding: 50px 20px;
   width: 100% !important;
-  height: 50vh;
+  height: 80vh;
   background-color: #f9f9f9; /* Light background color for better contrast */
   margin: 0 auto; /* Center the section */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
@@ -19445,4 +19445,23 @@ footer .footer-navbar .nav-item:last-child a {
   font-size: 2rem;
   font-weight: bold;
   color: orange;
+}
+
+.nav-link{
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+}
+.nav-link:hover{
+  color: var(--tropical-blue);
+  font-weight:bolder;
+  background: #ffffff;
+  z-index: inherit;
+ 
+}
+hr{
+  border: 3px solid var(--tropical-blue);
+  margin-top: 34px;
+  margin-bottom: 34px;
+  
 }
