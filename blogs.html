@@ -1,22 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
-
-<head>
+  <head>
     <title>Crafto - The Multipurpose HTML5 Template</title>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="author" content="ThemeZaa">
+    <meta name="author" content="ThemeZaa" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <meta name="description"
-        content="Elevate your online presence with Crafto - a modern, versatile, multipurpose Bootstrap 5 responsive HTML5, SCSS template using highly creative 52+ ready demos.">
+    <meta
+      name="description"
+      content="Elevate your online presence with Crafto - a modern, versatile, multipurpose Bootstrap 5 responsive HTML5, SCSS template using highly creative 52+ ready demos."
+    />
     <!-- favicon icon -->
-    <link rel="shortcut icon" href="images/favicon.png">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <link rel="shortcut icon" href="images/favicon.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="images/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="images/apple-touch-icon-114x114.png"
+    />
     <!-- google fonts preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- style sheets and font icons  -->
     <link rel="stylesheet" href="css/vendors.min.css" />
     <link rel="stylesheet" href="css/icon.min.css" />
@@ -24,128 +33,355 @@
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="demos/digital-agency/digital-agency.css" />
 
-   
+    <style>
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+      }
+      .blog-item {
+        display: flex;
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .card-body {
+        padding: 15px;
+      }
+      .hover-img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .categories-btn {
+        display: inline-block;
+        background: white;
+        color: #333;
+        padding: 5px 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-top: 10px;
+      }
+      .author {
+        display: block;
+        font-size: 13px;
+        color: #666;
+        margin-top: 5px;
+      }
+      .card-title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+        text-decoration: none;
+        margin-top: 10px;
+        display: block;
+      }
+    </style>
+  </head>
 
-</head>
-
-<body data-mobile-nav-style="full-screen-menu" data-mobile-nav-bg-color="#2d2c2b" class="custom-cursor">
+  <body
+    data-mobile-nav-style="full-screen-menu"
+    data-mobile-nav-bg-color="#2d2c2b"
+    class="custom-cursor"
+  >
     <!-- start cursor -->
     <div class="cursor-page-inner">
-        <div class="circle-cursor circle-cursor-inner"></div>
-        <div class="circle-cursor circle-cursor-outer"></div>
+      <div class="circle-cursor circle-cursor-inner"></div>
+      <div class="circle-cursor circle-cursor-outer"></div>
     </div>
     <!-- end cursor -->
     <!-- start header -->
     <header>
-        <!-- start navigation -->
-        <nav class="navbar navbar-expand-lg header-light bg-transparent disable-fixed">
-            <div class="container-fluid">
-                <div class="col-auto">
-                    <a class="navbar-brand" href="/">
-                        <img src="images-copy/black-logo-no-bg.png" data-at2x="images-copy/black-logo-no-bg.png" alt=""
-                            class="default-logo">
-                        <img src="images/demo-digital-agency-logo-black.jpg"
-                            data-at2x="images/demo-digital-agency-logo-black@2x.jpg" alt="" class="alt-logo">
-                        <img src="images/demo-digital-agency-logo-black.jpg"
-                            data-at2x="images/demo-digital-agency-logo-black@2x.jpg" alt="" class="mobile-logo">
-                    </a>
-                </div>
-                <div class="col-auto menu-order">
-                    <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-line"></span>
-                        <span class="navbar-toggler-line"></span>
-                        <span class="navbar-toggler-line"></span>
-                        <span class="navbar-toggler-line"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav alt-font">
-                            <li class="nav-item dropdown simple-dropdown">
-                                <a href="javascript:void(0);" class="nav-link">Our work<i style="color: #ff9343;"
-                                        class="fa-solid fa-angle-down ms-1"></i></a>
-                                <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink3"
-                                    role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
-                                    <li><a href="about.html">We are Cohere</a></li>
-                                    <li><a href="https://reframe.network/">Reframe </a></li>
-                                    <li><a href="people.html">People</a></li>
-                                    <li><a href="careers.html">Careers</a></li>
+      <!-- start navigation -->
+      <nav
+        class="navbar navbar-expand-lg header-light bg-transparent disable-fixed"
+      >
+        <div class="container-fluid">
+          <div class="col-auto">
+            <a class="navbar-brand" href="/">
+              <img
+                src="images-copy/black-logo-no-bg.png"
+                data-at2x="images-copy/black-logo-no-bg.png"
+                alt=""
+                class="default-logo"
+              />
+              <img
+                src="images/demo-digital-agency-logo-black.jpg"
+                data-at2x="images/demo-digital-agency-logo-black@2x.jpg"
+                alt=""
+                class="alt-logo"
+              />
+              <img
+                src="images/demo-digital-agency-logo-black.jpg"
+                data-at2x="images/demo-digital-agency-logo-black@2x.jpg"
+                alt=""
+                class="mobile-logo"
+              />
+            </a>
+          </div>
+          <div class="col-auto menu-order">
+            <button
+              class="navbar-toggler float-start"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-line"></span>
+              <span class="navbar-toggler-line"></span>
+              <span class="navbar-toggler-line"></span>
+              <span class="navbar-toggler-line"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav alt-font">
+                <li class="nav-item dropdown simple-dropdown">
+                  <a href="javascript:void(0);" class="nav-link"
+                    >Our work<i
+                      style="color: #ff9343"
+                      class="fa-solid fa-angle-down ms-1"
+                    ></i
+                  ></a>
+                  <i
+                    class="fa-solid fa-angle-down dropdown-toggle"
+                    id="navbarDropdownMenuLink3"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  ></i>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="navbarDropdownMenuLink3"
+                  >
+                    <li><a href="about.html">We are Cohere</a></li>
+                    <li><a href="https://reframe.network/">Reframe </a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown simple-dropdown">
+                  <a href="javascript:void(0);" class="nav-link"
+                    >Get Involved<i
+                      style="color: #ff9343"
+                      class="fa-solid fa-angle-down ms-1"
+                    ></i
+                  ></a>
+                  <i
+                    class="fa-solid fa-angle-down dropdown-toggle"
+                    id="navbarDropdownMenuLink3"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  ></i>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="navbarDropdownMenuLink3"
+                  >
+                    <li>
+                      <a href="join-our-community.html">Join our community</a>
+                    </li>
+                    <li><a href="about.html">Our Partnerships</a></li>
+                  </ul>
+                </li>
 
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown simple-dropdown">
-                                <a href="javascript:void(0);" class="nav-link">Get Involved<i style="color: #ff9343;"
-                                        class="fa-solid fa-angle-down ms-1"></i></a>
-                                <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink3"
-                                    role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
-                                    <li><a href="join-our-community.html">Join our community</a></li>
-                                    <li><a href="about.html">Our Partnerships</a></li>
+                <li class="nav-item dropdown simple-dropdown">
+                  <a href="javascript:void(0);" class="nav-link"
+                    >News & Reports<i
+                      style="color: #ff9343"
+                      class="fa-solid fa-angle-down ms-1"
+                    ></i
+                  ></a>
+                  <i
+                    class="fa-solid fa-angle-down dropdown-toggle"
+                    id="navbarDropdownMenuLink3"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  ></i>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="navbarDropdownMenuLink3"
+                  >
+                    <li><a href="about.html">News & Blogs</a></li>
+                    <li>
+                      <a href="demo-fashion-store-wishlist.html">Reports</a>
+                    </li>
+                    <li>
+                      <a href="demo-fashion-store-wishlist.html">Learning</a>
+                    </li>
+                  </ul>
+                </li>
 
-
-                                </ul>
-                            </li>
-
-                            <li class="nav-item dropdown simple-dropdown">
-                                <a href="javascript:void(0);" class="nav-link">News & Reports<i style="color: #ff9343;"
-                                        class="fa-solid fa-angle-down ms-1"></i></a>
-                                <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink3"
-                                    role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
-                                    <li><a href="about.html">News & Blogs</a></li>
-                                    <li><a href="demo-fashion-store-wishlist.html">Reports</a></li>
-                                    <li><a href="demo-fashion-store-wishlist.html">Learning</a></li>
-
-                                </ul>
-                            </li>
-
-
-                            <!-- <li class="nav-item"><a href="demo-digital-agency-portfolio.html" class="nav-link">Portfolio</a></li>
+                <!-- <li class="nav-item"><a href="demo-digital-agency-portfolio.html" class="nav-link">Portfolio</a></li>
                                     <li class="nav-item"><a href="demo-digital-agency-contact.html" class="nav-link">Contact</a></li> -->
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-auto ms-auto d-none d-lg-flex">
-                    <div class="header-icon">
-                        <div class="header-button ms-25px">
-                            <a href="demo-digital-agency-contact.html"
-                                class="btn border-2 btn-transparent-white-light btn-extra-large left-icon btn-switch-text">
-                                <span>
-                                    <span class="btn-double-text" data-text="Donate now">DONATE</span>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+              </ul>
             </div>
-        </nav>
-        <!-- end navigation -->
+          </div>
+          <div class="col-auto ms-auto d-none d-lg-flex">
+            <div class="header-icon">
+              <div class="header-button ms-25px">
+                <a
+                  href="demo-digital-agency-contact.html"
+                  class="btn border-2 btn-transparent-white-light btn-extra-large left-icon btn-switch-text"
+                >
+                  <span>
+                    <span class="btn-double-text" data-text="Donate now"
+                      >DONATE</span
+                    >
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- end navigation -->
     </header>
     <!-- end header -->
     <!-- start page title -->
-    <section class="page-title-separate-breadcrumbs bg-base-color bg-sliding-line ipad-top-space-margin">
-        <div class="container position-relative">
-            <div class="row justify-content-center align-items-lg-end extra-very-small-screen"
-                data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                <div class="col-lg-6 position-relative page-title-extra-large md-mb-30px sm-mb-20px z-index-9">
-                    <h1 class="text-dark-gray fw-600 ls-minus-4px mb-0 alt-font highlight-separator-small"><span
-                            class="highlight-separator mb-0 pb-0" data-shadow-animation="true"
-                            data-animation-delay="500">News & Blogs</span></h1>
-                </div>
-                <div class="col-lg-6">
-                    <p class="fs-20 lh-32 text-dark-gray opacity-7 w-90 lg-w-100 md-w-80 sm-w-100 mb-0">Our skilled
-                        developers and designers make sure to deliver tried-tested efficient and robust designs.</p>
-                </div>
-            </div>
+    <section
+      class="page-title-separate-breadcrumbs bg-base-color bg-sliding-line ipad-top-space-margin"
+    >
+      <div class="container position-relative">
+        <div
+          class="row justify-content-center align-items-lg-end extra-very-small-screen"
+          data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'
+        >
+          <div
+            class="col-lg-6 position-relative page-title-extra-large md-mb-30px sm-mb-20px z-index-9"
+          >
+            <h1
+              class="text-dark-gray fw-600 ls-minus-4px mb-0 alt-font highlight-separator-small"
+            >
+              <span
+                class="highlight-separator mb-0 pb-0"
+                data-shadow-animation="true"
+                data-animation-delay="500"
+                >News & Blogs</span
+              >
+            </h1>
+          </div>
+          <div class="col-lg-6">
+            <p
+              class="fs-20 lh-32 text-dark-gray opacity-7 w-90 lg-w-100 md-w-80 sm-w-100 mb-0"
+            >
+              Our skilled developers and designers make sure to deliver
+              tried-tested efficient and robust designs.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
     <!-- end page title -->
     <section class="pt-0">
-        <div id="blog-container" class="container">
-            
-         
-
+      <div id="blog-container" class="container">
+        <div class="row">
+          <div class="col-12 p-md-0">
+            <ul
+              class="blog-only-text blog-wrapper grid-loading grid grid-3col xl-grid-3col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-large"
+              data-anime='{"el": "childs", "translateY": [0, 0], "perspective": [1200,1200], "scale": [1.1, 1], "rotateX": [50, 0], "opacity": [0,1], "duration": 800, "delay": 200, "staggervalue": 300, "easing": "easeOutQuad" }'
+            >
+              <li class="grid-sizer"></li>
+              <!-- start blog item -->
+              <li class="grid-item">
+                <div
+                  class="card border-radius-0px border-0 h-100 overflow-hidden"
+                  style="background-color: #ff9343"
+                >
+                  <div class="card-body hover-box dark-hover p-15 lg-p-10">
+                    <img
+                      src="images-copy/involved.jpg"
+                      class="hover-img"
+                      alt=""
+                    />
+                    <a
+                      href="#"
+                      class="categories-btn ms-0 bg-white text-dark-gray text-uppercase fw-600 mb-70px"
+                      >Branding</a
+                    >
+                    <a
+                      href="#"
+                      class="fs-13 text-uppercase d-block mb-5px text-dark-gray fw-500 mt-60px"
+                      >Jonse robbert</a
+                    >
+                    <a
+                      href="demo-digital-agency-blog-single-creative.html"
+                      class="card-title d-block fs-22 sm-fs-20 ls-minus-05px fw-500 text-dark-gray mb-0 w-90 lg-w-100"
+                      >Design can speak the in tongue of art force of
+                      commerce.</a
+                    >
+                  </div>
+                </div>
+              </li>
+              <!-- end blog item -->
+              <!-- start blog item -->
+              <li class="grid-item">
+                <div
+                  class="card bg-base-color border-radius-0px border-0 h-100 overflow-hidden"
+                >
+                  <div class="card-body hover-box dark-hover p-15 lg-p-10">
+                    <img
+                      src="images-copy/hero-cohere.jpg"
+                      class="hover-img"
+                      alt=""
+                    />
+                    <a
+                      href="#"
+                      class="categories-btn ms-0 bg-white text-dark-gray text-uppercase fw-600 mb-70px"
+                      >Design</a
+                    >
+                    <a
+                      href="#"
+                      class="fs-13 text-uppercase d-block mb-5px text-dark-gray fw-500 mt-60px"
+                      >Den viliamson</a
+                    >
+                    <a
+                      href="demo-digital-agency-blog-single-creative.html"
+                      class="card-title d-block fs-22 sm-fs-20 ls-minus-05px fw-500 text-dark-gray mb-0 w-90 lg-w-100"
+                      >Simplicity is process the obvious and adding
+                      meaningful.</a
+                    >
+                  </div>
+                </div>
+              </li>
+              <!-- end blog item -->
+              <!-- start blog item -->
+              <li class="grid-item">
+                <div
+                  class="card border-radius-0px border-0 h-100 overflow-hidden"
+                  style="background-color: #ff6865"
+                >
+                  <div class="card-body hover-box dark-hover p-15 lg-p-10">
+                    <img
+                      src="images-copy/events.jpg"
+                      class="hover-img"
+                      alt=""
+                    />
+                    <a
+                      href="#"
+                      class="categories-btn ms-0 bg-white text-dark-gray text-uppercase fw-600 mb-70px"
+                      >Digital</a
+                    >
+                    <a
+                      href="#"
+                      class="fs-13 text-uppercase d-block mb-5px text-dark-gray fw-500 mt-60px"
+                      >Rosald smith</a
+                    >
+                    <a
+                      href="demo-digital-agency-blog-single-creative.html"
+                      class="card-title d-block fs-22 sm-fs-20 ls-minus-05px fw-500 text-dark-gray mb-0 w-90 lg-w-100"
+                      >Good design obvious, great design is more transparent.
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <!-- end blog item -->
+            </ul>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- start footer -->
@@ -153,9 +389,10 @@
     <!-- end footer -->
     <!-- start scroll progress -->
     <div class="scroll-progress d-none d-xxl-block">
-        <a href="#" class="scroll-top" aria-label="scroll">
-            <span class="scroll-text">Scroll</span><span class="scroll-line"><span class="scroll-point"></span></span>
-        </a>
+      <a href="#" class="scroll-top" aria-label="scroll">
+        <span class="scroll-text">Scroll</span
+        ><span class="scroll-line"><span class="scroll-point"></span></span>
+      </a>
     </div>
     <!-- end scroll progress -->
     <!-- javascript libraries -->
@@ -163,7 +400,6 @@
     <script type="text/javascript" src="js/vendors.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <!-- Custom JS -->
-    <script type="module" src="./customjs/fetchBlogs.js" defer></script>
-</body>
-
+    <script type="module" src="./customjs/fetchBlogs.js"></script>
+  </body>
 </html>
