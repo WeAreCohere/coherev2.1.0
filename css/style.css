@@ -19353,3 +19353,32 @@ footer .footer-navbar .nav-item:last-child a {
 .footer-demo img {
   max-height: 55px !important;
 }
+
+.swiper-slide {
+  width: 100% !important; /* Force it to take full width */
+}
+
+
+@media (max-width: 768px) {
+  .carousel-control-prev, 
+  .carousel-control-next {
+      left: 10px !important;
+      right: 10px !important;
+      width: 40px;
+      height: 40px;
+  }
+
+  .carousel-control-prev {
+      left: 5px !important; /* Move it inside the viewport */
+  }
+
+  .carousel-control-next {
+      right: 5px !important; /* Move it inside the viewport */
+  }
+
+  .carousel-control-prev-icon, 
+  .carousel-control-next-icon {
+      width: 25px;
+      height: 25px;
+  }
+}
