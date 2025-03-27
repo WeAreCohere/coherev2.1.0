@@ -575,6 +575,16 @@ b, strong {
   line-height: inherit;
 }
 /* Text color */
+.text-cohere-blue {
+  color: var(--base-color-cohere-blue) !important;
+}
+.text-cohere-orange {
+   color: #ff9343 !important;
+}
+
+.text-cohere-pink {
+color: #ff6865;
+}
 .text-white, .btn-link.text-white, a.text-white-hover:hover {
   color: var(--white);
 }
