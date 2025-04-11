@@ -5,6 +5,7 @@
  * @param {HTMLElement} element
  * @returns JSON
  */
+
 const fetchBlogs = async (element = null) => {
   // loadMessage("Loading...🚀", element);
   try {
@@ -34,17 +35,22 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 const renderBlogs_ = async (element = null) => {
-  element.innerHTML = "";
+  if (!element) return;
 
-  const blogs = await fetchBlogs(element);
+  // Show loading text
+  element.innerHTML = `<p style="text-align:center; padding: 20px;">Loading blogs...</p>`;
+
+  const blogs = await processBlogs();
+
+  console.log(blogs);
 
   if (!blogs.success) {
     console.error("Failed to load blogs:", blogs.message);
+    element.innerHTML = `<p style="text-align:center; padding: 20px; color: red;">Failed to load blogs.</p>`;
     return;
   }
 
-  const { data } = blogs?.data?.results;
-  const blogsData = data || [];
+  const blogsData = blogs?.data ?? [];
 
   if (blogsData.length === 0) {
     console.warn("No blog data available.");
@@ -59,6 +65,8 @@ const renderBlogs_ = async (element = null) => {
     }, []);
 
   const blogChunks = chunkArray(blogsData, chunkSize);
+
+  console.log(blogChunks);
 
   const bgColors = ["#ff9343", "#72ccca", "#ff6865"];
 
@@ -77,17 +85,25 @@ const renderBlogs_ = async (element = null) => {
                 <div class="card border-radius-0px border-0 h-100 overflow-hidden" style="background-color: ${bgColor};">
                     <div class="card-body hover-box dark-hover p-15 lg-p-10">
                         <img src="${
-                          blog?.image ?? "images-copy/involved.jpg"
+                          blog?.image === ""
+                            ? "images-copy/involved.jpg"
+                            : blog?.image
                         }" class="hover-img" referrerpolicy="no-referrer" alt="">
-                        <a href="#" class="categories-btn ms-0 bg-white text-dark-gray text-uppercase fw-600 mb-70px">${
-                          blog?.category === "news" ? "Blog" : "Job"
-                        }</a>
-                        <a href="#" class="fs-13 text-uppercase d-block mb-5px text-dark-gray fw-500 mt-60px">${formatDate(
-                          blog?.date ?? null
-                        )}</a>
-                        <a href="demo-digital-agency-blog-single-creative.html" class="card-title d-block fs-22 sm-fs-20 ls-minus-05px fw-500 text-dark-gray mb-0 w-90 lg-w-100">${
-                          blog?.description.substring(0, 80) + "..." ?? ""
-                        }</a>
+                        <a href="${
+                          blog?.link
+                        }" class="categories-btn ms-0 bg-white text-dark-gray text-uppercase fw-600 mb-70px">${
+                        blog?.category
+                      }</a>
+                        <a href="${
+                          blog?.link
+                        }" class="fs-13 text-uppercase d-block mb-5px text-dark-gray fw-500 mt-60px">${formatDate(
+                        blog?.date ?? null
+                      )}</a>
+                        <a href="${
+                          blog?.link
+                        }" class="card-title d-block fs-22 sm-fs-20 ls-minus-05px fw-500 text-dark-gray mb-0 w-90 lg-w-100">${
+                        blog?.description
+                      }</a>
                     </div>
                 </div>
             </li>`;
@@ -119,4 +135,57 @@ const filterArr = (arr, category) => {
     .slice(0, 3);
 
   return returnedArray;
+};
+
+const fetchBlogs2 = async () => {
+  try {
+    const response = await fetch(
+      "https://blogs.wearecohere.org/index.php?rest_route=/wp/v2/posts&_embed"
+    );
+    if (!response.ok) {
+      throw new Error("Couldn't fetch blogs'");
+    }
+
+    const data = await response.json();
+
+    console.log(data);
+
+    return {
+      success: true,
+      data,
+    };
+  } catch (error) {
+    return {
+      success: false,
+      message: error.message,
+    };
+  }
+};
+
+const processBlogs = async () => {
+  try {
+    const { data: blogs } = await fetchBlogs2();
+
+    const data = blogs.map((blog, i) => {
+      return {
+        description: blog?.title?.rendered ?? "",
+        date: blog?.date,
+        link: blog?.link,
+        category: "blog",
+        image:
+          blog?._embedded["wp:featuredmedia"]?.[0]?.media_details?.sizes?.large
+            ?.source_url ?? "",
+      };
+    });
+
+    return {
+      success: true,
+      data,
+    };
+  } catch (error) {
+    return {
+      success: false,
+      message: error.message,
+    };
+  }
 };
