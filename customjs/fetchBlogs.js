@@ -29,20 +29,19 @@ const fetchBlogs = async (element = null) => {
 
 document.addEventListener("DOMContentLoaded", async () => {
   const newsBlog = document.getElementById("blog-container");
+  const paginate = newsBlog?.dataset?.home === "1";
   if (newsBlog) {
-    await renderBlogs_(newsBlog);
+    await renderBlogs_(newsBlog, paginate);
   }
 });
 
-const renderBlogs_ = async (element = null) => {
+const renderBlogs_ = async (element = null, paginate = false) => {
   if (!element) return;
 
   // Show loading text
   element.innerHTML = `<p style="text-align:center; padding: 20px;">Loading blogs...</p>`;
 
-  const blogs = await processBlogs();
-
-  console.log(blogs);
+  const blogs = await processBlogs(paginate);
 
   if (!blogs.success) {
     console.error("Failed to load blogs:", blogs.message);
@@ -54,6 +53,7 @@ const renderBlogs_ = async (element = null) => {
 
   if (blogsData.length === 0) {
     console.warn("No blog data available.");
+    element.innerHTML = `<p style="text-align:center; padding: 20px;">No blog data available.</p>`;
     return;
   }
 
@@ -65,8 +65,6 @@ const renderBlogs_ = async (element = null) => {
     }, []);
 
   const blogChunks = chunkArray(blogsData, chunkSize);
-
-  console.log(blogChunks);
 
   const bgColors = ["#ff9343", "#72ccca", "#ff6865"];
 
@@ -115,6 +113,7 @@ const renderBlogs_ = async (element = null) => {
     })
     .join("");
 
+  element.innerHTML = "";
   element.insertAdjacentHTML("afterbegin", blogHTML);
 };
 
@@ -162,11 +161,11 @@ const fetchBlogs2 = async () => {
   }
 };
 
-const processBlogs = async () => {
+const processBlogs = async (paginate = false) => {
   try {
     const { data: blogs } = await fetchBlogs2();
 
-    const data = blogs.map((blog, i) => {
+    let data = blogs.map((blog, i) => {
       return {
         description: blog?.title?.rendered ?? "",
         date: blog?.date,
@@ -177,6 +176,10 @@ const processBlogs = async () => {
             ?.source_url ?? "",
       };
     });
+
+    if (paginate) {
+      data = data.slice(0, 3);
+    }
 
     return {
       success: true,
