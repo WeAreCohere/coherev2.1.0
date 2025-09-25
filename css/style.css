@@ -79,7 +79,303 @@ Table of contents
   --seal-brown: #0e0708;
   --Wasabi: #8ea63a;
 }
+
+/*----THE GATHERING POINT STARTS------*/
+
+ .gp-definition {
+      background-color:#f7f7f7;
+      padding: 4rem 1rem;
+    }
+
+    .gp-container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .gp-definition h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .gp-definition p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .gp-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .gp-feature-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .gp-feature-card span {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .gp-feature-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .gp-feature-card p {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    .gp-timeline {
+      padding: 4rem 1rem;
+      
+      background-blend-mode: darken;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .gp-timeline h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 2rem;
+    }
+
+    .gp-timeline-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 1000px;
+      position: relative;
+    }
+
+    .gp-timeline-list::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100%;
+      background: #ccc;
+    }
+
+    .gp-timeline-list li {
+      position: relative;
+      width: 50%;
+      padding: 1rem;
+      box-sizing: border-box;
+      animation: slideUp 0.8s ease forwards;
+      opacity: 0;
+    }
+
+    .gp-timeline-list li:nth-child(odd) {
+      left: 0;
+    }
+
+    .gp-timeline-list li:nth-child(even) {
+      left: 50%;
+    }
+
+    .gp-timeline-list li:nth-child(1) { animation-delay: 0.2s; }
+    .gp-timeline-list li:nth-child(2) { animation-delay: 0.4s; }
+    .gp-timeline-list li:nth-child(3) { animation-delay: 0.6s; }
+    .gp-timeline-list li:nth-child(4) { animation-delay: 0.8s; }
+    .gp-timeline-list li:nth-child(5) { animation-delay: 1s; }
+    .gp-timeline-list li:nth-child(6) { animation-delay: 1.2s; }
+    .gp-timeline-list li:nth-child(7) { animation-delay: 1.4s; }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .gp-content {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .gp-content h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: #444;
+    }
+
+    .gp-content p {
+      font-size: 1rem;
+      
+    }
+
+    .gp-date {
+      font-size: 0.85rem;
+      color: #282828;
+    }
+.gp-congo-focus {
+  background-color: #eef2fa;
+  padding: 4rem 1rem;
+  font-family: "Segoe UI", sans-serif;
+  color: #282828;
+}
+
+.gp-congo-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.gp-congo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.gp-congo-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #003366;
+}
+
+.gp-congo-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.gp-congo-text ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.gp-congo-text ul li {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.gp-congo-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.gp-congo-image img:hover {
+  transform: scale(1.02);
+}
+.gp-support-congo {
+  background-color: #ff9343;
+  color: #fff;
+  text-align: center;
+  padding: 64px 16px;
+}
+
+.gp-support-wrapper {
+  max-width: 700px;
+  margin: auto;
+}
+
+.gp-support-congo h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.gp-support-congo p {
+  font-size: 18px;
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+.gp-support-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.gp-circle-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #006bb6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.gp-circle-btn:hover {
+  background-color: #0091dc;
+}
+
+.gp-arrow {
+  width: 24px;
+  height: 24px;
+}
+
+.gp-support-text {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 768px) {
+  .gp-congo-grid {
+    grid-template-columns: 1fr;
+  }
+  .gp-congo-image {
+    margin-top: 2rem;
+  }
+  .gp-content h3{
+ font-size: 20px;
+  }
+   .gp-content p, .gp-content span{
+ font-size: 16px;
+  }
+.gathering-page p{
+  font-size: 17px;
+}
+.gp-timeline h2{
+  font-size: 30px;
+}
+.gp-congo-focus h2{
+   font-size: 30px;
+}
+.gp-congo-focus ul li{
+font-size: 17px;
+}
+
+}
+    @media screen and (max-width: 768px) {
+      .gp-timeline-list::before {
+        left: 8px;
+      }
+
+      .gp-timeline-list li {
+        width: 100%;
+        left: 0 !important;
+        padding-left: 2rem;
+      }
+    }
+
+    /*THE GATHERING POINT ENDS*/
 /* ===================================
+
     03. Reset
 ====================================== */
 .alt-font {
