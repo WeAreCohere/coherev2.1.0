@@ -1,0 +1,90 @@
+/* Basic Reset and Setup */
+
+
+/* Container for the Split Box (Base Class: .GP-congo) */
+.GP-congo {
+    width: 100%;
+    height: 600px; 
+    display: flex; 
+    overflow: hidden; 
+    background-color: #72ccca; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* LEFT COLUMN: Image */
+.GP-congo .image-column {
+    flex: 1; 
+    position: relative; 
+    overflow: hidden; 
+}
+
+/* Image Wrapper for the Zoom Effect */
+.GP-congo .image-wrapper {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.GP-congo .zoom-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 0.1s ease-out; 
+    transform-origin: center center; 
+    transform: scale(1.0); /* Initial zoom level */
+}
+
+/* RIGHT COLUMN: Text Content */
+.GP-congo .text-column {
+    flex: 1; 
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    overflow: auto; 
+}
+
+.GP-congo .text-column h1 {
+    color: #333;
+    margin-top: 0;
+    font-size: 2.2em;
+    
+    /* INITIAL STATE FOR SLIDE-UP EFFECT */
+    transform: translateY(20px); 
+    opacity: 0; 
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out; 
+}
+
+/* CLASS TO BE ADDED BY JAVASCRIPT WHEN VISIBLE */
+.GP-congo .text-column h1.slide-in {
+    transform: translateY(0); 
+    opacity: 1; 
+}
+
+
+.GP-congo .text-column p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .GP-congo {
+        flex-direction: column; 
+        height: auto; 
+    }
+
+    .GP-congo .image-column {
+        height: 400px; 
+    }
+
+    .GP-congo .text-column {
+        padding: 30px 20px;
+    }
+}

@@ -3784,3 +3784,62 @@ function initMap() {
         }
     });
 }
+////////////////////////THE GATHERING POINT//////////////////////////////////
+// JAVASCRIPT FOR BOTH SCROLL EFFECTS
+
+// Get elements from the HTML using their IDs
+const GP_zoomImage = document.getElementById('zoomImage');
+const GP_splitBox = document.getElementById('splitBox');
+const GP_slideUpHeading = document.getElementById('slideUpHeading');
+
+const GP_minScale = 1.0;
+const GP_maxScale = 1.25;
+
+// --- Heading Slide-Up Effect (using Intersection Observer) ---
+const GP_observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        // If the element (GP_splitBox) is visible
+        if (entry.isIntersecting) {
+            // Add the class to trigger the CSS slide-up transition
+            GP_slideUpHeading.classList.add('slide-in');
+            // Stop observing once the animation has been triggered
+            GP_observer.unobserve(entry.target);
+        }
+    });
+}, {
+    // Trigger the animation when the element is 10% visible
+    threshold: 0.1 
+});
+
+// Start observing the main container
+if (GP_splitBox) {
+    GP_observer.observe(GP_splitBox);
+}
+
+// --- Image Zoom Effect (using Scroll Handler) ---
+function handleScroll() {
+    if (!GP_splitBox || !GP_zoomImage) return;
+
+    const rect = GP_splitBox.getBoundingClientRect();
+    
+    // Image zoom calculation based on how far the user has scrolled through the box
+    const endScrollPoint = rect.bottom;
+    
+    // Calculate scroll progress (0 when starting, 1 when finished scrolling past the box)
+    let scrollProgress = 1 - (endScrollPoint / (window.innerHeight + GP_splitBox.offsetHeight));
+    
+    // Clamp the progress to be between 0 and 1
+    scrollProgress = Math.max(0, Math.min(1, scrollProgress));
+    
+    // Map the GP_minScale-GP_maxScale progress to the scale range
+    const newScale = GP_minScale + (GP_maxScale - GP_minScale) * scrollProgress;
+
+    // Apply the new scale to the image
+    GP_zoomImage.style.transform = `scale(${newScale})`;
+}
+
+// Attach the scroll handler to the window scroll event
+window.addEventListener('scroll', handleScroll);
+
+// Run the function once on load to set the initial state
+handleScroll();
