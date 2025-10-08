@@ -147,8 +147,6 @@ const fetchBlogs2 = async () => {
 
     const data = await response.json();
 
-    console.log(data);
-
     return {
       success: true,
       data,
@@ -166,14 +164,28 @@ const processBlogs = async (paginate = false) => {
     const { data: blogs } = await fetchBlogs2();
 
     let data = blogs.map((blog, i) => {
+      // Better handling of featured media
+      let featuredImage = "";
+
+      if (blog?._embedded?.["wp:featuredmedia"]?.[0]) {
+        const media = blog._embedded["wp:featuredmedia"][0];
+
+        // Try different image sizes in order of preference
+        if (media.media_details?.sizes?.large?.source_url) {
+          featuredImage = media.media_details.sizes.large.source_url;
+        } else if (media.media_details?.sizes?.medium?.source_url) {
+          featuredImage = media.media_details.sizes.medium.source_url;
+        } else if (media.source_url) {
+          featuredImage = media.source_url;
+        }
+      }
+
       return {
         description: blog?.title?.rendered ?? "",
         date: blog?.date,
         link: blog?.link,
         category: "blog",
-        image:
-          blog?._embedded["wp:featuredmedia"]?.[0]?.media_details?.sizes?.large
-            ?.source_url ?? "",
+        image: featuredImage,
       };
     });
 
