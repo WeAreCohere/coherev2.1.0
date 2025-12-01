@@ -631,6 +631,38 @@
           <!-- Bootstrap Carousel for Reports -->
           <div id="reportsCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
+              <!-- Slide 0 -->
+              <div class="carousel-item active">
+                <div class="icon-with-text-style-08">
+                  <div class="feature-box feature-box-left-icon-middle overflow-hidden">
+                    <div class="feature-box-content">
+                      <span class="text-dark-gray">
+                        Read our report that suggests a rethink of due diligence processes and learn how centring
+                        relationships with refugee-led organisations can build genuine trust and strengthen community
+                        resilience.
+                      </span>
+                    </div>
+                  </div>
+                  <div class="icon-with-text-style-08 pt-5">
+                    <div class="feature-box feature-box-left-icon-middle">
+                      <div
+                        class="feature-box-icon feature-box-icon-rounded w-55px h-55px rounded-circle bg-dark-gray me-15px rounded-box">
+                        <a href="https://drive.google.com/file/d/1ndaUysrpvHPQutNKzbhAytf38mM_CvnO/view"
+                          target="_blank">
+                          <i class="feather icon-feather-arrow-right text-white icon-small"></i>
+                        </a>
+                      </div>
+                      <div class="feature-box-content">
+                        <a href="https://drive.google.com/file/d/1ndaUysrpvHPQutNKzbhAytf38mM_CvnO/view" target="_blank"
+                          class="d-inline-block fs-20 ls-minus-05px alt-font fw-600 text-dark-gray text-dark-gray-hover">
+                          Read Full Report
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <!-- Slide 1 -->
               <div class="carousel-item active">
                 <div class="icon-with-text-style-08">
@@ -768,6 +800,8 @@
           aria-label="Report 2"></button>
         <button type="button" data-bs-target="#reportsCarousel" data-bs-slide-to="2" class="dark-indicator"
           aria-label="Report 3"></button>
+        <button type="button" data-bs-target="#reportsCarousel" data-bs-slide-to="3" class="dark-indicator"
+          aria-label="Report 4"></button>
       </div>
     </div>
   </section>
@@ -964,6 +998,7 @@
       .getElementById("reportsCarousel")
       .addEventListener("slide.bs.carousel", function (event) {
         let images = [
+          "images/reports/position-paper.png",
           "images-copy/report.png",
           "images-copy/reports/IWS-report.png",
           "images-copy/reports/Org-pathways-report.png",
