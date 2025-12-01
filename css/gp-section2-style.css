@@ -17,7 +17,9 @@
     position: relative; 
     overflow: hidden; 
 }
-
+.gp-donate-button :hover{
+    background-color: #282828;
+}
 /* Image Wrapper for the Zoom Effect */
 .GP-congo .image-wrapper {
     position: sticky;
@@ -73,6 +75,159 @@
     font-size: 1.1em;
 }
 
+.agp-container {
+      width: 100vw;
+      min-height: 650px;
+      background: #282828 url('images-cg/bg.jpg');
+      background-blend-mode: darken;
+      background-size: cover;
+      background-position: center;
+      padding: 40px 20px;
+      box-sizing: border-box;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .agp-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .agp-header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .agp-header p {
+      margin: 10px 0 0;
+      font-size: 1.2em;
+    }
+
+    .agp-card-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .agp-card {
+      position: relative;
+      width: 28%;
+      min-width: 260px;
+      height: 350px;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .agp-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .agp-card:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Slide-up color overlay */
+    .agp-card::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0%;
+      transition: height 0.4s ease;
+      z-index: 1;
+    }
+
+    .agp-card-orange:hover::before {
+      background-color: rgba(255, 147, 67, 0.9);
+      height: 100%;
+    }
+
+    .agp-card-red:hover::before {
+      background-color: rgba(255, 104, 101, 0.9);
+      height: 100%;
+    }
+
+    .agp-card-teal:hover::before {
+      background-color: rgba(114, 204, 202, 0.9);
+      height: 100%;
+    }
+
+    /* Bottom gradient for readability */
+    .agp-card::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .agp-card-content {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+
+    .agp-card-content h3 {
+      margin: 10px 0 5px;
+      font-size: 1.2em;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    }
+
+    .agp-card-button {
+      padding: 8px 24px;
+      font-size: 0.85em;
+      background-color: #282828;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      margin-top: 10px;
+      display: inline-block;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .agp-card-button:hover {
+      background-color: #444;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 900px) {
+      .agp-card {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .agp-card {
+        width: 100%;
+      }
+
+      .agp-header h1 {
+        font-size: 1.6em;
+      }
+
+      .agp-header p {
+        font-size: 1em;
+      }
+    }
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     .GP-congo {
