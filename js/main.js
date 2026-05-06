@@ -3843,3 +3843,14 @@ window.addEventListener('scroll', handleScroll);
 
 // Run the function once on load to set the initial state
 handleScroll();
+
+//GP types slider button
+ function slide(direction) {
+    const slider = document.getElementById('agpSlider');
+    const scrollAmount = 320; // Matches card width + gap
+    if (direction === 'left') {
+      slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else {
+      slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  }
