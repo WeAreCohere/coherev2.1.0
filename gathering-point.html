@@ -130,17 +130,18 @@
 
 
   <!-- start page title -->
-  <section class="page-title-separate-breadcrumbs bg-white bg-sliding-line ipad-top-space-margin " >
+  <section class="page-title-separate-breadcrumbs bg-white bg-sliding-line ipad-top-space-margin">
+    <div class="space" style="padding-top:0px ;"></div>
     <div class="container position-relative">
       <div class="row justify-content-center align-items-lg-end extra-very-small-screen"
         data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
         <div class="col-lg-6 position-relative page-title-extra-large md-mb-30px sm-mb-20px z-index-9">
           <h1 class="text-dark-gray fw-600 ls-minus-4px mb-0 alt-font highlight-separator-small text-capitalize"><span
-              class="highlight-separator mb-0 pb-0" data-shadow-animation="true" data-animation-delay="500">
+              class="highlight-separator mb-0 pb-0" data-shadow-animation="true" data-animation-delay="500" style="position: relative; bottom: 100px;">
               gathering points</h1>
         </div>
         <div class="col-lg-6">
-          <p class="fs-20 lh-32 text-dark-gray opacity-7 w-90 lg-w-100 md-w-80 mb-0">Gathering Points are regular online
+          <p class="fs-20 lh-32 text-dark-gray opacity-7 w-90 lg-w-100 md-w-80 mb-0" style="position: relative; top: 30px;">Gathering Points are regular online
             and in-person spaces hosted by refugee-led organisations, where displaced communities and allies come
             together around key themes and crises. Grounded in lived experience, they foster regional exchange,
             multilingual dialogue, and grassroots leadership rooted in solidarity and action.</p>
@@ -172,6 +173,7 @@
     <div class="text-column  text-dark">
       <h1 id="slideUpHeading" class="fw-600 text-dark ls-minus-2px alt-font feature-box-content">Why Join a Gathering
         Point?</h1>
+        
       <p>
         By joining, you’ll become part of a community of displaced communities, refugee-led organisations, partners and
         allies, that come together regularly to focus on urgent issues and shared challenges.
@@ -228,41 +230,63 @@
 
 
     <!--Zoom-registrations-->
-   
+
                      
 
    </div> 
   </div>
 
  <div class="agp-container">
-    <div class="agp-header">
-      <h1>Join us at a Gathering Point</h1>
-      <p>Connect, listen and learn with refugee leaders on the frontline</p>
+  <div class="agp-header">
+    <h1>Join us at a Gathering Point</h1>
+    <p>Connect, listen and learn with refugee leaders on the frontline</p>
+  </div>
+
+  <button class="agp-nav-btn prev-btn" onclick="slide('left')">&#10094;</button>
+  <button class="agp-nav-btn next-btn" onclick="slide('right')">&#10095;</button>
+
+  <div class="agp-card-wrapper" id="agpSlider">
+    <div class="agp-card agp-card-orange">
+      <img src="images-copy/gp-web.jpg" alt="Congo War" />
+      <div class="agp-card-content">
+        <h3>Congo War</h3>
+        <a href="https://tinyurl.com/bpxxpyd9" class="agp-card-button">Register</a>
+      </div>
     </div>
-    <div class="agp-card-wrapper">
-      <div class="agp-card agp-card-orange">
-        <img src="images-copy/gp-web.jpg" alt="Congo War" />
-        <div class="agp-card-content">
-          <h3>Congo War</h3>
-          <a href="https://us06web.zoom.us/meeting/register/ZHszVGpSSvCrljLoSGDOPg" class="agp-card-button">Register</a>
-        </div>
+
+    <div class="agp-card agp-card-red">
+      <img src="images-copy/gp-web2.png" alt="Sudan War" />
+      <div class="agp-card-content">
+        <h3>Sudan War</h3>
+        <a href="https://tinyurl.com/ya7f8h4k" class="agp-card-button">Register</a>
       </div>
-      <div class="agp-card agp-card-red">
-        <img src="images-copy/gp-web2.png" alt="Sudan War" />
-        <div class="agp-card-content">
-          <h3>Sudan War</h3>
-          <a href="https://us06web.zoom.us/meeting/register/48Pj7RMtQ_-H5mi-azSkZg" class="agp-card-button">Register</a>
-        </div>
+    </div>
+
+    <div class="agp-card agp-card-teal">
+      <img src="images-copy/gp-web3.jpg" alt="Refugee-led Education" />
+      <div class="agp-card-content">
+        <h3>Refugee-led Education</h3>
+        <a href="https://tinyurl.com/53r8xxep" class="agp-card-button">Register</a>
       </div>
-      <div class="agp-card agp-card-teal">
-        <img src="images-copy/gp-web3.jpg" alt="Refugee-led Education" />
-        <div class="agp-card-content">
-          <h3>Refugee-led Education</h3>
-          <a href="https://us06web.zoom.us/meeting/register/-N6IAFzPTomDu5yvBzjDAA" class="agp-card-button">Register</a>
-        </div>
+    </div>
+
+    <div class="agp-card agp-card-orange">
+      <img src="images-copy/GATHERING POINT.png" alt="Climate" />
+      <div class="agp-card-content">
+        <h3>Climate Resilience</h3>
+        <a href="https://tinyurl.com/5xvdpew4" class="agp-card-button">Register</a>
+      </div>
+    </div>
+
+    <div class="agp-card agp-card-red">
+      <img src="images-copy/aggr.png" alt="Aggregation" />
+      <div class="agp-card-content">
+        <h3>Aggregation</h3>
+        <a href="https://us06web.zoom.us/meeting/register/riA5kPZBRguKrmdNt_CoaA" class="agp-card-button">Coming Soon!</a>
       </div>
     </div>
   </div>
+</div>
     <!-- Support CTA -->
     <div class="gp-support-congo text-dark my-5 " style="background: url('images-copy/smudge.PNG');">
       <div class="gp-support-wrapper">
