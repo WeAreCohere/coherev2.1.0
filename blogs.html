@@ -33,55 +33,361 @@
   <link rel="stylesheet" href="demos/digital-agency/digital-agency.css" />
 
   <style>
-    .blog-grid {
+    .blog-redesign {
+      --br-navy: #16233D;
+      --br-navy-soft: #28395a;
+      --br-cream-deep: #F1E9D8;
+      --br-marigold: #E7A94C;
+      --br-marigold-dark: #8a5c1e;
+      --br-teal: #1D6F64;
+      --br-clay: #C8695A;
+      --br-muted: #6b6a63;
+      --br-line: #e4ddcc;
+      --br-radius: 14px;
+    }
+
+    .blog-redesign {
+      padding: 50px 0 80px;
+    }
+
+    .blog-redesign .layout {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      list-style: none;
-      padding: 0;
+      grid-template-columns: 1fr 300px;
+      gap: 36px;
+      align-items: start;
     }
 
-    .blog-item {
-      display: flex;
-      background-color: #fff;
-      border-radius: 8px;
+    /* ---------- post cards ---------- */
+    .blog-redesign .posts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 18px;
+    }
+
+    .blog-redesign .posts-grid p.blog-loading {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--br-muted);
+    }
+
+    .blog-redesign .card {
+      background: #fff;
+      border-radius: var(--br-radius);
       overflow: hidden;
-    }
-
-    .card-body {
-      padding: 15px;
-    }
-
-    .hover-img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .categories-btn {
-      display: inline-block;
-      background: white;
-      color: #333;
-      padding: 5px 10px;
-      font-weight: bold;
-      text-transform: uppercase;
-      margin-top: 10px;
-    }
-
-    .author {
-      display: block;
-      font-size: 13px;
-      color: #666;
-      margin-top: 5px;
-    }
-
-    .card-title {
-      font-size: 20px;
-      font-weight: bold;
-      color: #333;
+      border: 1px solid var(--br-line);
+      display: flex;
+      flex-direction: column;
+      border-left: 4px solid var(--br-teal);
+      color: inherit;
       text-decoration: none;
-      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .blog-redesign .card:hover h3 {
+      color: var(--br-teal);
+    }
+
+    .blog-redesign .card.theme-marigold {
+      border-left-color: var(--br-marigold);
+    }
+
+    .blog-redesign .card.theme-clay {
+      border-left-color: var(--br-clay);
+    }
+
+    .blog-redesign .card.theme-navy {
+      border-left-color: var(--br-navy);
+    }
+
+    .blog-redesign .card-thumb {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: var(--br-cream-deep);
+    }
+
+    .blog-redesign .card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .blog-redesign .thumb-tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      background: rgba(22, 35, 61, 0.88);
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 100px;
+    }
+
+    .blog-redesign .card-body {
+      padding: 15px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      flex: 1;
+    }
+
+    .blog-redesign .card h3 {
+      font-size: 16px;
+      line-height: 1.3;
+      font-weight: 500;
+      color: var(--br-navy);
+      margin: 0;
+    }
+
+    .blog-redesign .card p.excerpt {
+      font-size: 12.5px;
+      color: var(--br-muted);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .blog-redesign .byline {
+      margin-top: auto;
+      padding-top: 11px;
+      border-top: 1px solid var(--br-line);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .blog-redesign .avatar {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--br-teal);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .blog-redesign .byline-meta {
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    .blog-redesign .byline-meta .name {
+      font-weight: 600;
+      color: var(--br-navy);
       display: block;
+    }
+
+    .blog-redesign .byline-meta .date {
+      color: var(--br-muted);
+    }
+
+    .blog-redesign .read-time {
+      margin-left: auto;
+      font-size: 10.5px;
+      color: var(--br-muted);
+      white-space: nowrap;
+    }
+
+    /* ---------- pagination ---------- */
+    .blog-redesign .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .blog-redesign .page-btn {
+      min-width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      border: 1px solid var(--br-line);
+      background: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: 0 10px;
+      color: var(--br-navy);
+    }
+
+    .blog-redesign .page-btn.is-active {
+      background: var(--br-navy);
+      border-color: var(--br-navy);
+      color: #fff;
+    }
+
+    .blog-redesign .page-btn.nav {
+      font-weight: 600;
+    }
+
+    .blog-redesign .page-btn[disabled] {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    /* ---------- sidebar ---------- */
+    .blog-redesign .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .blog-redesign .side-card {
+      background: #fff;
+      border: 1px solid var(--br-line);
+      border-radius: var(--br-radius);
+      padding: 16px;
+    }
+
+    .blog-redesign .side-card h2 {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0 0 12px;
+      letter-spacing: 0.2px;
+      color: var(--br-navy);
+    }
+
+    .blog-redesign .sidebar-search {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--br-cream-deep);
+      border: 1px solid var(--br-line);
+      border-radius: 100px;
+      padding: 8px 14px;
+      font-size: 12.5px;
+      color: var(--br-muted);
+      margin-bottom: 12px;
+    }
+
+    .blog-redesign .sidebar-search input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 12.5px;
+      width: 100%;
+      color: var(--br-navy);
+    }
+
+    .blog-redesign .topic-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .blog-redesign .topic-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 4px;
+      border-bottom: 1px solid var(--br-line);
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .blog-redesign .topic-row:last-child {
+      border-bottom: none;
+    }
+
+    .blog-redesign .topic-row.is-active .label {
+      color: var(--br-teal);
+    }
+
+    .blog-redesign .topic-row .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 10px;
+      display: inline-block;
+    }
+
+    .blog-redesign .topic-row .label {
+      display: flex;
+      align-items: center;
+      color: #2B2B28;
+      font-weight: 500;
+    }
+
+    .blog-redesign .topic-row .count {
+      color: var(--br-muted);
+      font-size: 11px;
+      background: var(--br-cream-deep);
+      padding: 2px 8px;
+      border-radius: 100px;
+    }
+
+    .blog-redesign .popular-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .blog-redesign .popular-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .blog-redesign .rank {
+      font-size: 17px;
+      color: var(--br-line);
+      font-weight: 600;
+      width: 22px;
+      flex-shrink: 0;
+      line-height: 1.5;
+    }
+
+    .blog-redesign .popular-item.top .rank {
+      color: var(--br-marigold-dark);
+    }
+
+    .blog-redesign .popular-thumb {
+      width: 46px;
+      height: 46px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: var(--br-cream-deep);
+    }
+
+    .blog-redesign .popular-meta h4 {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--br-navy);
+      margin: 0 0 4px;
+    }
+
+    .blog-redesign .popular-meta h4 a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .blog-redesign .popular-meta .views {
+      font-size: 10.5px;
+      color: var(--br-muted);
+    }
+
+    @media (max-width: 900px) {
+      .blog-redesign .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .blog-redesign .posts-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -202,64 +508,36 @@
   </section>
   <!-- end page title -->
   <section class="pt-0">
-    <div id="blog-container" class="container">
-      <div class="row">
-        <div class="col-12 p-md-0">
-          <ul
-            class="blog-only-text blog-wrapper grid-loading grid grid-3col xl-grid-3col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-large"
-            data-anime='{"el": "childs", "translateY": [0, 0], "perspective": [1200,1200], "scale": [1.1, 1], "rotateX": [50, 0], "opacity": [0,1], "duration": 800, "delay": 200, "staggervalue": 300, "easing": "easeOutQuad" }'>
-            <li class="grid-sizer"></li>
-            <!-- start blog item -->
-            <li class="grid-item">
-              <div class="card border-radius-0px border-0 h-100 overflow-hidden" style="background-color: #ff9343">
-                <div class="card-body hover-box dark-hover p-15 lg-p-10">
-                  <img src="images-copy/involved.jpg" class="hover-img" alt="" />
-                  <a href="#"
-                    class="categories-btn ms-0 bg-white text-dark-gray text-uppercase fw-600 mb-70px">Branding</a>
-                  <a href="#" class="fs-13 text-uppercase d-block mb-5px text-dark-gray fw-500 mt-60px">Jonse
-                    robbert</a>
-                  <a href="demo-digital-agency-blog-single-creative.html"
-                    class="card-title d-block fs-22 sm-fs-20 ls-minus-05px fw-500 text-dark-gray mb-0 w-90 lg-w-100">Design
-                    can speak the in tongue of art force of
-                    commerce.</a>
-                </div>
+    <div class="blog-redesign">
+      <div class="container">
+        <div class="layout">
+
+          <!-- MAIN COLUMN -->
+          <div class="main-col">
+            <div id="posts-grid" class="posts-grid">
+              <p class="blog-loading">Loading blogs...</p>
+            </div>
+            <div id="pagination" class="pagination"></div>
+          </div>
+
+          <!-- SIDEBAR -->
+          <aside class="sidebar">
+
+            <div class="side-card">
+              <h2>Browse by topic</h2>
+              <div class="sidebar-search">
+                <span>&#128269;</span>
+                <input type="text" id="topic-search-input" placeholder="Search articles…" autocomplete="off">
               </div>
-            </li>
-            <!-- end blog item -->
-            <!-- start blog item -->
-            <li class="grid-item">
-              <div class="card bg-base-color border-radius-0px border-0 h-100 overflow-hidden">
-                <div class="card-body hover-box dark-hover p-15 lg-p-10">
-                  <img src="images-copy/hero-cohere.jpg" class="hover-img" alt="" />
-                  <a href="#"
-                    class="categories-btn ms-0 bg-white text-dark-gray text-uppercase fw-600 mb-70px">Design</a>
-                  <a href="#" class="fs-13 text-uppercase d-block mb-5px text-dark-gray fw-500 mt-60px">Den
-                    viliamson</a>
-                  <a href="demo-digital-agency-blog-single-creative.html"
-                    class="card-title d-block fs-22 sm-fs-20 ls-minus-05px fw-500 text-dark-gray mb-0 w-90 lg-w-100">Simplicity
-                    is process the obvious and adding
-                    meaningful.</a>
-                </div>
-              </div>
-            </li>
-            <!-- end blog item -->
-            <!-- start blog item -->
-            <li class="grid-item">
-              <div class="card border-radius-0px border-0 h-100 overflow-hidden" style="background-color: #ff6865">
-                <div class="card-body hover-box dark-hover p-15 lg-p-10">
-                  <img src="images-copy/events.jpg" class="hover-img" alt="" />
-                  <a href="#"
-                    class="categories-btn ms-0 bg-white text-dark-gray text-uppercase fw-600 mb-70px">Digital</a>
-                  <a href="#" class="fs-13 text-uppercase d-block mb-5px text-dark-gray fw-500 mt-60px">Rosald smith</a>
-                  <a href="demo-digital-agency-blog-single-creative.html"
-                    class="card-title d-block fs-22 sm-fs-20 ls-minus-05px fw-500 text-dark-gray mb-0 w-90 lg-w-100">Good
-                    design obvious, great design is more transparent.
-                  </a>
-                </div>
-              </div>
-            </li>
-            <!-- end blog item -->
-          </ul>
+              <div class="topic-list" id="topic-list"></div>
+            </div>
+
+            <div class="side-card">
+              <h2 id="popular-heading">Most read this month</h2>
+              <div class="popular-list" id="popular-list"></div>
+            </div>
+
+          </aside>
         </div>
       </div>
     </div>
