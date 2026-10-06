@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What if we told you…</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --y: #FFC400;
+      --t: #6FC4C4;
+      --bg: #000;
+      --card: #2a2a2a;
+      --line: #1c1c1c
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html,
+    body {
+      background: #000;
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      color: #fff
+    }
+
+    .page {
+      max-width: 1830px;
+      margin: 0 auto;
+      background: var(--bg);
+      padding: 0
+    }
+
+    @media(min-width:1000px) {
+      html {
+        zoom: .67
+      }
+
+      body {
+        padding: 90px 90px
+      }
+    }
+
+    section {
+      border-top: 1px solid var(--line);
+      padding: 56px 104px
+    }
+
+    h1,
+    h2,
+    h3 {
+      text-transform: uppercase;
+      font-weight: 700
+    }
+
+    .wrap {
+      max-width: 1530px;
+      margin: 0 auto
+    }
+
+    h2.sec {
+      color: var(--t);
+      font-size: 54px;
+      text-align: center;
+      line-height: 1
+    }
+
+    .sub {
+      font-size: 16px;
+      margin-top: 20px;
+      color: #ddd
+    }
+
+    .hero {
+      border-top: 0;
+      padding: 30px 104px 70px;
+      text-align: center
+    }
+
+    .hero h1 {
+      color: var(--y);
+      font-size: 126px;
+      line-height: 1.2;
+      letter-spacing: .5px;
+      margin-bottom: 70px
+    }
+
+    .video {
+      position: relative;
+      height: 848px;
+      border: 1px solid #4d6a68;
+      text-align: left;
+      background: linear-gradient(160deg, #1a3a3a 0%, #1d2a22 40%, #241f10 70%, #111 100%);
+      overflow: hidden
+    }
+
+    .video small {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      font-size: 16px;
+      letter-spacing: .6px;
+      color: #bbb;
+      text-transform: uppercase
+    }
+
+    .play {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: var(--y);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%)
+    }
+
+    .play i {
+      width: 30px;
+      height: 26px;
+      border-radius: 4px;
+      background: #2c4a7a;
+      border: 2px solid #fff;
+      display: block;
+      position: relative
+    }
+
+    .play i:after {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 5px;
+      border-left: 9px solid #fff;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent
+    }
+
+    .video .cap {
+      position: absolute;
+      left: 78px;
+      bottom: 42px
+    }
+
+    .video .cap h3 {
+      font-size: 56px;
+      line-height: 1.1
+    }
+
+    .tag {
+      color: var(--t);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: .8px;
+      text-transform: uppercase
+    }
+
+    .agency {
+      padding: 30px 0 20px
+    }
+
+    .agency .in {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 0
+    }
+
+    .agency h2 {
+      margin-bottom: 28px
+    }
+
+    .agency p {
+      font-size: 24px;
+      line-height: 1.5;
+      margin-bottom: 12px;
+      font-weight: 500
+    }
+
+    blockquote {
+      margin: 0 0 0 368px;
+      border-left: 4px solid var(--t);
+      padding-left: 20px;
+      margin-top: 14px
+    }
+
+    blockquote h3 {
+      color: var(--y);
+      font-size: 56px;
+      line-height: 1.1
+    }
+
+    blockquote .tag {
+      font-size: 17px
+    }
+
+    .vids {
+      display: flex;
+      gap: 16px;
+      margin-top: 20px
+    }
+
+    .vid {
+      flex: 1;
+      height: 190px;
+      background: repeating-linear-gradient(135deg, #363636 0 18px, #3c3c3c 18px 36px);
+      position: relative
+    }
+
+    .vid .p,
+    .lead .p {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--t);
+      position: absolute;
+      left: 50%;
+      top: 44%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .vid .p:after,
+    .lead .p:after {
+      content: "";
+      border-left: 8px solid #1b3a3a;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      margin-left: 2px
+    }
+
+    .vid .t {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--card);
+      padding: 12px;
+      font-size: 17px;
+      font-weight: 700;
+      text-transform: uppercase
+    }
+
+    .vid .new {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: var(--y);
+      color: #000;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 2px 8px
+    }
+
+    .vid.more {
+      background: none;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      color: var(--t);
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      border: 0
+    }
+
+    .leaders {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 22px
+    }
+
+    .lead {
+      position: relative;
+      background: var(--card);
+      min-height: 420px;
+      display: flex;
+      flex-direction: column
+    }
+
+    .lead .img {
+      flex: 1;
+      background: repeating-linear-gradient(135deg, #363636 0 18px, #3c3c3c 18px 36px);
+      position: relative
+    }
+
+    .lead .p {
+      width: 42px;
+      height: 42px;
+      top: 50%
+    }
+
+    .lead .info {
+      padding: 12px 14px;
+      background: var(--card)
+    }
+
+    .lead h4 {
+      color: var(--y);
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 6px
+    }
+
+    .lead b {
+      display: block;
+      font-size: 17px;
+      text-transform: uppercase;
+      font-weight: 700
+    }
+
+    .lead .tag {
+      font-size: 13px
+    }
+
+    .lead.big {
+      grid-column: span 2;
+      grid-row: span 2;
+      min-height: 792px
+    }
+
+    .lead.big h4 {
+      font-size: 33px
+    }
+
+    .lead.big .info {
+      padding: 16px 14px
+    }
+
+    .voices .big {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      margin-top: 20px
+    }
+
+    .voices .big strong {
+      color: var(--y);
+      font-size: 92px;
+      line-height: .8
+    }
+
+    .voices .big span {
+      font-size: 33px;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      margin-top: 20px;
+      align-items: center
+    }
+
+    .btn {
+      border: 1px solid #fff;
+      padding: 6px 14px;
+      font-size: 16px;
+      text-transform: uppercase;
+      font-family: inherit;
+      background: none;
+      color: #fff;
+      font-weight: 500
+    }
+
+    .btn.on {
+      background: var(--y);
+      border-color: var(--y);
+      color: #000
+    }
+
+    .sp {
+      flex: 1
+    }
+
+    .vcard {
+      background: var(--card);
+      border: 1px solid #444;
+      height: 190px;
+      margin-top: 12px;
+      padding: 12px 16px
+    }
+
+    .vcard h5 {
+      font-size: 21px;
+      text-transform: uppercase;
+      font-weight: 700
+    }
+
+    .blogs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 20px
+    }
+
+    .blog {
+      background: var(--card);
+      border-top: 4px solid var(--t);
+      padding: 14px 16px 16px
+    }
+
+    .blog span {
+      display: inline-block;
+      background: var(--t);
+      color: #000;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 8px;
+      text-transform: uppercase;
+      margin-bottom: 8px
+    }
+
+    .blog.rv span {
+      background: var(--y)
+    }
+
+    .blog h4 {
+      font-size: 27px;
+      text-transform: uppercase;
+      font-weight: 700
+    }
+
+    .blog p {
+      font-size: 15px;
+      color: #ddd;
+      margin-top: 4px
+    }
+
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 30px
+    }
+
+    .foot h2 {
+      color: var(--y);
+      font-size: 60px;
+      text-align: left
+    }
+
+    .sub2 {
+      font-size: 16px;
+      margin: 14px 0 10px
+    }
+
+    .mail {
+      display: flex
+    }
+
+    .mail input {
+      width: 420px;
+      background: none;
+      border: 1px solid #fff;
+      padding: 10px 12px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 16px;
+      text-transform: uppercase
+    }
+
+    .mail button {
+      background: var(--y);
+      border: 0;
+      padding: 0 14px;
+      font-weight: 700;
+      font-family: inherit;
+      font-size: 16px;
+      text-transform: uppercase
+    }
+
+    .follow {
+      width: 560px
+    }
+
+    .follow h2 {
+      color: var(--t);
+      font-size: 58px
+    }
+
+    .soc {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px
+    }
+
+    .soc i {
+      width: 26px;
+      height: 26px;
+      border: 1.5px solid #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-style: normal;
+      font-size: 13px;
+      font-weight: 700
+    }
+
+    @media(max-width:1000px) {
+
+      section,
+      .hero {
+        padding: 32px 20px
+      }
+
+      .hero h1 {
+        font-size: 50px
+      }
+
+      .video {
+        height: 300px
+      }
+
+      .video .cap {
+        left: 20px;
+        bottom: 20px
+      }
+
+      .video .cap h3 {
+        font-size: 28px
+      }
+
+      h2.sec {
+        font-size: 38px
+      }
+
+      blockquote {
+        margin-left: 0
+      }
+
+      blockquote h3 {
+        font-size: 32px
+      }
+
+      .vids {
+        overflow-x: auto
+      }
+
+      .vid {
+        min-width: 180px
+      }
+
+      .leaders {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .lead.big {
+        grid-column: span 2;
+        grid-row: auto;
+        min-height: 420px
+      }
+
+      .blogs {
+        grid-template-columns: 1fr
+      }
+
+      .foot {
+        flex-direction: column;
+        gap: 30px
+      }
+
+      .mail input {
+        width: 100%
+      }
+
+      .follow {
+        width: auto
+      }
+
+      .foot h2 {
+        font-size: 42px
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <section class="hero">
+      <h1>What if we told you...</h1>
+      <div class="video">
+        <small>Launch video placeholder: 7-leader compilation</small>
+        <div class="play"><i></i></div>
+        <div class="cap">
+          <h3>We need your trust more than your money</h3>
+          <div class="tag">Leader name, Organisation</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="agency">
+      <div class="in">
+        <h2 class="sec">Agency over aid</h2>
+        <p>Aid can provide vital resources and support, but it should not come at the expense of people's ability to
+          shape the decisions that affect their lives and futures.</p>
+        <p>Agency means having the power to define priorities, make decisions and lead on solutions, and humanitarianism
+          should be designed to support that power, rather than replace it.</p>
+        <blockquote>
+          <h3>“We are the experts of our own lives.”</h3>
+          <div class="tag">Sandra Ndayishimiye, WOPEDE</div>
+        </blockquote>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="sec">Unpacking the campaign</h2>
+        <p class="sub" style="padding-left:20px">Short videos from the Cohere team on what agency means in practice.</p>
+        <div class="vids">
+          <div class="vid">
+            <div class="p"></div>
+            <div class="t">Agency video 1 title</div>
+          </div>
+          <div class="vid">
+            <div class="p"></div>
+            <div class="t">Agency video 2 title</div>
+          </div>
+          <div class="vid">
+            <div class="p"></div>
+            <div class="t">Agency video 3 title</div>
+          </div>
+          <div class="vid"><span class="new">NEW</span>
+            <div class="p"></div>
+            <div class="t">Agency video 4 title</div>
+          </div>
+          <div class="vid"><span class="new">NEW</span>
+            <div class="p"></div>
+            <div class="t">Agency video 5 title</div>
+          </div>
+          <div class="vid more">More coming soon</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="sec">Meet the leaders</h2>
+        <p class="sub">Seven leaders, tell it in their own words.</p>
+        <div class="leaders">
+          <div class="lead big">
+            <div class="img">
+              <div class="p"></div>
+            </div>
+            <div class="info">
+              <h4>We need your trust more than your money</h4><b>Leader name 1</b><span class="tag">Organisation,
+                Country</span>
+            </div>
+          </div>
+          <div class="lead">
+            <div class="img">
+              <div class="p"></div>
+            </div>
+            <div class="info">
+              <h4>Nothing about us without us</h4><b>Leader name 2</b><span class="tag">Organisation, Country</span>
+            </div>
+          </div>
+          <div class="lead">
+            <div class="img">
+              <div class="p"></div>
+            </div>
+            <div class="info">
+              <h4>Fund the leaders already there</h4><b>Leader name 3</b><span class="tag">Organisation, Country</span>
+            </div>
+          </div>
+          <div class="lead">
+            <div class="img">
+              <div class="p"></div>
+            </div>
+            <div class="info">
+              <h4>We are not beneficiaries, we are partners</h4><b>Leader name 4</b><span class="tag">Organisation,
+                Country</span>
+            </div>
+          </div>
+          <div class="lead">
+            <div class="img">
+              <div class="p"></div>
+            </div>
+            <div class="info">
+              <h4>Listen first</h4><b>Leader name 5</b><span class="tag">Organisation, Country</span>
+            </div>
+          </div>
+          <div class="lead">
+            <div class="img">
+              <div class="p"></div>
+            </div>
+            <div class="info">
+              <h4>Our solutions already exist</h4><b>Leader name 6</b><span class="tag">Organisation, Country</span>
+            </div>
+          </div>
+          <div class="lead">
+            <div class="img">
+              <div class="p"></div>
+            </div>
+            <div class="info">
+              <h4>Change the rules, not the rhetoric</h4><b>Leader name 7</b><span class="tag">Organisation,
+                Country</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="voices">
+      <div class="wrap">
+        <h2 class="sec">The Voices Wall</h2>
+        <div class="big"><strong>45</strong><span>Voices and counting</span></div>
+        <div class="tabs">
+          <button class="btn on">What I wish people understood</button>
+          <button class="btn">What could change</button>
+          <span class="sp"></span>
+          <button class="btn">All countries</button>
+          <button class="btn">←</button>
+          <button class="btn">→</button>
+        </div>
+        <div class="vcard">
+          <h5>“Trust us to know what our communities need.”</h5>
+          <div class="tag" style="margin-top:6px;font-size:14px">Amina, Org A, Kenya</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="sec">Dig deeper</h2>
+        <p class="sub">Blog pieces written by the communities.</p>
+        <div class="blogs">
+          <div class="blog"><span>Cohere team</span>
+            <h4>Blog title goes here</h4>
+            <p>Two-line summary of the post pulled from WordPress.</p>
+          </div>
+          <div class="blog rv"><span>Reframe voices</span>
+            <h4>Blog title goes here</h4>
+            <p>Two-line summary of the post pulled from WordPress.</p>
+          </div>
+          <div class="blog rv"><span>Reframe voices</span>
+            <h4>Blog title goes here</h4>
+            <p>Two-line summary of the post pulled from WordPress.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap foot">
+        <div>
+          <h2 class="sec" style="color:var(--y);text-align:left;font-size:60px">Stay in the conversation</h2>
+          <p class="sub2">Get new videos and voices in your inbox.</p>
+          <div class="mail"><input placeholder="Your email" aria-label="Email"><button>Subscribe</button></div>
+        </div>
+        <div class="follow">
+          <h2 class="sec" style="text-align:left;font-size:58px">Follow</h2>
+          <div class="soc"><i>in</i><i>◎</i><i>✕</i><i>▶</i></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+
+</html>
